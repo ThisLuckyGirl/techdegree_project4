@@ -1,5 +1,5 @@
 <?php
-include("phrase.php");
+//include("phrase.php");
 
 //declare game class
 class Game

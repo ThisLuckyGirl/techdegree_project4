@@ -3,10 +3,10 @@
 //declare phrase class
 class Phrase
 {
-  private $currentPhrase = '';
-  private $selected = array();
+  private $currentPhrase;
+  private $selected;
 
-  function __construct($currentPhrase = '', $selected = '') {
+  function __construct($currentPhrase = null, $selected = null) {
     /*if (!empty($currentPhrase)) {
         $this->phrase = $phrase;
     }
@@ -18,16 +18,35 @@ class Phrase
     } elseif (isset($currentPhrase)) {
         $this->currentPhrase = $phrase;
     }*/
+  }
 
-    function setPhrase($currentPhrase) {
-      $this->currentPhrase = $phrase;
-    }
+  if (!isset($currentPhrase)) {
+    $this->currentPhrase = $phrase;
+  } else {
+    $this->currentPhrase = 'Dream Big';
+  }
+
+  if (!isset($selected)) {
+    $this->selected = $selected;
+
+  }
+
+
+
+
+  function setPhrase($currentPhrase) {
     if (!isset($currentPhrase)) {
         $this->currentPhrase = 'Dream Big';
+    }  else {
+        $this->currentPhrase = $phrase;
     }
   }
 
-    function addPhraseToDisplay() {
+  function getPhrase() {
+      return $this->currentPhrase;
+  }
+
+  function addPhraseToDisplay() {
       //Split string into lowercase characters
       $characters = str_split(strtolower($this->phrase));
       //loop through characters and display as <li>
@@ -37,6 +56,6 @@ class Phrase
             //echo $character . "<br>";
             echo "<li class='hide letter'>" . $character . "</li>";
           //}
-      }
-    }
+  }
+}
 }

@@ -25,6 +25,18 @@ class Phrase
     if (!isset($currentPhrase)) {
         $this->currentPhrase = 'Dream Big';
     }
-
   }
+
+    function addPhraseToDisplay() {
+      //Split string into lowercase characters
+      $characters = str_split(strtolower($this->phrase));
+      //loop through characters and display as <li>
+      //reference: http://thisinterestsme.com/php-loop-characters-string/
+      foreach ($characters as $character) {
+          //if(isset($character)) {
+            //echo $character . "<br>";
+            echo "<li class='hide letter'>" . $character . "</li>";
+          //}
+      }
+    }
 }

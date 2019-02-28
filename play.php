@@ -4,8 +4,11 @@ require_once("inc/Game.php");
 require_once("inc/Phrase.php");
 
 //instantiate classes
-$game = new Game($phrase);
 $phrase = new Phrase();
+$game = new Game($phrase);
+
+
+echo $phrase->addPhraseToDisplay();
 
 //var_dump for testing classes
 var_dump($phrase);

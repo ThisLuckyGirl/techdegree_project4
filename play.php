@@ -8,8 +8,6 @@ $phrase = new Phrase();
 $game = new Game($phrase);
 
 
-echo $phrase->addPhraseToDisplay();
-
 //var_dump for testing classes
 var_dump($phrase->getPhrase());
 var_dump($game);
@@ -29,20 +27,11 @@ var_dump($game);
 		<div class="main-container">
 			<h2 class="header">Phrase Hunter</h2>
       <?php
-      function addPhraseToDisplay() {
-          //Split string into lowercase characters
-          $characters = str_split(strtolower($this->currentPhrase));
-          //loop through characters and display as <li>
-          //reference: http://thisinterestsme.com/php-loop-characters-string/
-          foreach ($characters as $character) {
-              if(empty($character)) {
-                //echo $character . "<br>";
-                echo "<li class='hide space'>" . $character . "</li>";
-              } else {
-                echo "<li class='hide letter'>" . $character . "</li>";
-              }
-          }
-          ?>
+      echo $phrase->addPhraseToDisplay();
+      echo $game->displayKeyboard();
+      echo $game->displayScore();
+      var_dump($_POST);
+      ?>
 		</div>
 	</body>
 </html>
